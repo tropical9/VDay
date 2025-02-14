@@ -4,11 +4,7 @@ const gifs = [
   "https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif",
   "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
   "https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif",
-  "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif",
-  "https://media3.giphy.com/media/qRtwZkH3TaQrJuAUmp/giphy.gif?cid=6c09b9524ndrs4k3tpeeq8oxq71rqvchs1bh4hvwfm7npucm&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
-  "https://media0.giphy.com/media/ejQyE9Jg7Mhu8OGlV9/giphy.gif?cid=6c09b9521m1d033zgw26fsrhvnt4b3l0isgo8yoov3zq8rxh&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
-  "https://media1.giphy.com/media/YVC7joze251gzunUIf/giphy.gif?cid=6c09b952c77u1zu8f4kn1ipvd1tvzivt599k4y6nurdb7gpu&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
-  
+  "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif"
 ];
 
 // Get DOM elements
@@ -60,6 +56,13 @@ yesButton.addEventListener("click", () => {
   });
 });
 
+// Remove the loaded GIF when "No" is clicked after "Yes"
+noButton.addEventListener("click", () => {
+  if (gifContainer.innerHTML) {
+    gifContainer.innerHTML = ""; // Clear the GIF container
+  }
+});
+
 // Share button functionality
 shareButton.addEventListener("click", () => {
   if (navigator.share) {
@@ -72,4 +75,3 @@ shareButton.addEventListener("click", () => {
     alert("Your browser doesn't support sharing. Copy the link manually!");
   }
 });
-
