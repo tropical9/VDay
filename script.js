@@ -1,5 +1,6 @@
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
+const messageArea = document.getElementById("messageArea");
 
 // Move "No" button when hovered over
 noBtn.addEventListener("mouseover", moveButton);
@@ -12,8 +13,7 @@ function moveButton() {
     noBtn.style.top = `${y}px`;
 }
 
-
-
+// "Yes" button action
 yesBtn.addEventListener("click", function() {
     const messages = [
         "You made the right choice. No take-backs!",
@@ -30,10 +30,8 @@ yesBtn.addEventListener("click", function() {
 
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
-    document.body.innerHTML = `
-        <div class="container">
-            <h1>${randomMessage}</h1>
-            <img src="https://media.giphy.com/media/3ohs4jLC0duUuWWA6w/giphy.gif" alt="Happy Love" style="width:100%; max-width:300px; border-radius:15px; margin-top:15px;">
-        </div>
+    messageArea.innerHTML = `
+        <p>${randomMessage}</p>
+        <img src="https://media.giphy.com/media/3ohs4jLC0duUuWWA6w/giphy.gif" alt="Happy Love" style="width:100%; max-width:300px; border-radius:15px; margin-top:15px;">
     `;
 });
