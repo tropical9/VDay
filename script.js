@@ -1,36 +1,50 @@
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const gifContainer = document.getElementById("gifContainer");
+// Array of cute Valentine's GIFs
+const gifs = [
+  "https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif",
+  "https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif",
+  "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
+  "https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif",
+  "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif"
+];
 
-// Move "No" button when hovered over
-noBtn.addEventListener("mouseover", moveButton);
-noBtn.addEventListener("click", moveButton);
+// Get DOM elements
+const yesButton = document.getElementById("yes-btn");
+const noButton = document.getElementById("no-btn");
+const gifContainer = document.getElementById("gif-container");
+const shareButton = document.getElementById("share-btn");
 
-function moveButton() {
-    const x = Math.random() * (window.innerWidth - 150);
-    const y = Math.random() * (window.innerHeight - 100);
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
-}
+// Make the "No" button move away when hovered or clicked
+noButton.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+  const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+  noButton.style.position = "absolute";
+  noButton.style.left = `${x}px`;
+  noButton.style.top = `${y}px`;
+});
 
-// "Yes" button action: Show random cute GIF
-yesBtn.addEventListener("click", function() {
-    const gifLinks = [
-        "https://media.giphy.com/media/l0HlyLQsbvnYz7QNa/giphy.gif",
-        "https://media.giphy.com/media/l0HUqsz2jdQYElRm0/giphy.gif",
-        "https://media.giphy.com/media/3ohs4jLC0duUuWWA6w/giphy.gif",
-        "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
-        "https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif",
-        "https://media.giphy.com/media/xT1XGzXhVbuqJbp7JS/giphy.gif",
-        "https://media.giphy.com/media/3o6ZsZfgA3lBN2jtT6/giphy.gif",
-        "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
-        "https://media.giphy.com/media/l3q2wJsC23ikXGPLO/giphy.gif",
-        "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"
-    ];
+// Show random GIF and confetti when "Yes" is clicked
+yesButton.addEventListener("click", () => {
+  const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+  gifContainer.innerHTML = `
+    <p>Yay! You made my day! 💖</p>
+    <img src="${randomGif}" alt="Cute GIF">
+  `;
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+});
 
-    const randomGif = gifLinks[Math.floor(Math.random() * gifLinks.length)];
-
-    gifContainer.innerHTML = `
-        <img src="${randomGif}" alt="Cute Gif" style="width:100%; max-width:300px; border-radius:15px; margin-top:15px;">
-    `;
+// Share button functionality
+shareButton.addEventListener("click", () => {
+  if (navigator.share) {
+    navigator.share({
+      title: "Will You Be My Valentine?",
+      text: "Check out this cute Valentine's website! 💌",
+      url: window.location.href
+    });
+  } else {
+    alert("Your browser doesn't support sharing. Copy the link manually!");
+  }
 });
