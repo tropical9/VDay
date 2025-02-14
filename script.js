@@ -13,26 +13,34 @@ const noButton = document.getElementById("no-btn");
 const gifContainer = document.getElementById("gif-container");
 const shareButton = document.getElementById("share-btn");
 
-// Make the "No" button move away when hovered or clicked
-noButton.addEventListener("mouseover", () => {
+// Function to move the "No" button to a safe position
+const moveNoButton = () => {
   const yesButtonRect = yesButton.getBoundingClientRect();
+  const noButtonRect = noButton.getBoundingClientRect();
   const buffer = 20; // Minimum distance between buttons
 
   let x, y;
   do {
-    x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-    y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+    // Calculate random position within the window
+    x = Math.random() * (window.innerWidth - noButtonRect.width);
+    y = Math.random() * (window.innerHeight - noButtonRect.height);
   } while (
-    x + noButton.offsetWidth > yesButtonRect.left - buffer &&
+    // Ensure the "No" button doesn't overlap the "Yes" button
+    x + noButtonRect.width > yesButtonRect.left - buffer &&
     x < yesButtonRect.right + buffer &&
-    y + noButton.offsetHeight > yesButtonRect.top - buffer &&
+    y + noButtonRect.height > yesButtonRect.top - buffer &&
     y < yesButtonRect.bottom + buffer
   );
 
+  // Set the new position
   noButton.style.position = "absolute";
   noButton.style.left = `${x}px`;
   noButton.style.top = `${y}px`;
-});
+};
+
+// Move the "No" button when hovered or clicked
+noButton.addEventListener("mouseover", moveNoButton);
+noButton.addEventListener("click", moveNoButton);
 
 // Show random GIF and confetti when "Yes" is clicked
 yesButton.addEventListener("click", () => {
