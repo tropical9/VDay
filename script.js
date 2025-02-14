@@ -68,3 +68,4 @@ shareButton.addEventListener("click", () => {
     alert("Your browser doesn't support sharing. Copy the link manually!");
   }
 });
+
