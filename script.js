@@ -28,7 +28,7 @@ yesBtn.addEventListener("click", function() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
     messageArea.innerHTML = `
-        <p>${messages}</p>
+        <p>${randomMessages}</p>
         <img src="https://media.giphy.com/media/3ohs4jLC0duUuWWA6w/giphy.gif" alt="Happy Love" style="width:100%; max-width:300px; border-radius:15px; margin-top:15px;">
     `;
 });
