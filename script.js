@@ -1,6 +1,6 @@
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
-const messageArea = document.getElementById("messageArea");
+const gifContainer = document.getElementById("gifContainer");
 
 // Move "No" button when hovered over
 noBtn.addEventListener("mouseover", moveButton);
@@ -13,26 +13,24 @@ function moveButton() {
     noBtn.style.top = `${y}px`;
 }
 
-// "Yes" button action
+// "Yes" button action: Show random cute GIF
 yesBtn.addEventListener("click", function() {
-    const messages = [
-        "You made the right choice. No take-backs!",
-        "Whew, that was a close one. Thought I’d have to bribe you with chocolate.",
-        "You’ve officially upgraded your Valentine’s Day to ‘awesome.’",
-        "Sweet! Now we just need a rom-com level montage.",
-        "Guess we’re stuck together now. Hope you like bad jokes!",
-        "You’re locked in now—no escaping this Valentine’s Day!",
-        "Good call. Imagine the regret if you had said no.",
-        "A wise choice. Now, let’s celebrate with snacks!"
+    const gifLinks = [
+        "https://media.giphy.com/media/l0HlyLQsbvnYz7QNa/giphy.gif",
+        "https://media.giphy.com/media/l0HUqsz2jdQYElRm0/giphy.gif",
+        "https://media.giphy.com/media/3ohs4jLC0duUuWWA6w/giphy.gif",
+        "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
+        "https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif",
+        "https://media.giphy.com/media/xT1XGzXhVbuqJbp7JS/giphy.gif",
+        "https://media.giphy.com/media/3o6ZsZfgA3lBN2jtT6/giphy.gif",
+        "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
+        "https://media.giphy.com/media/l3q2wJsC23ikXGPLO/giphy.gif",
+        "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"
     ];
 
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    const randomGif = gifLinks[Math.floor(Math.random() * gifLinks.length)];
 
-    // Working GIF URL from Giphy
-    const gifURL = "https://media.giphy.com/media/26FPqKps6dZF9LBIc/giphy.gif?cid=790b7611t4kqxuo7xgkozl8qyikbjazc98p1xhl7kzw56gy9&ep=v1_gifs_search&rid=giphy.gif&ct=g"; 
-
-    messageArea.innerHTML = `
-        <p>${randomMessage}</p>
-        <img src="${gifURL}" alt="Happy Love" style="width:100%; max-width:300px; border-radius:15px; margin-top:15px;">
+    gifContainer.innerHTML = `
+        <img src="${randomGif}" alt="Cute Gif" style="width:100%; max-width:300px; border-radius:15px; margin-top:15px;">
     `;
 });
