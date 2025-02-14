@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Rampart One', cursive;
+  font-family: 'Bebas Neue', sans-serif;
   background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
   color: #6b2737;
   display: flex;
@@ -21,10 +21,11 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   color: #6b2737;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
 }
 
 .buttons {
@@ -41,7 +42,8 @@ button {
   border-radius: 50px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  font-family: 'Rampart One', cursive;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
 }
 
 #yes-btn {
@@ -89,7 +91,7 @@ button {
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   button {
