@@ -1,7 +1,7 @@
 // Array of cute Valentine's GIFs
 const gifs = [
-  "https://media3.giphy.com/media/qRtwZkH3TaQrJuAUmp/giphy.gif?cid=6c09b952qcj18x1rrirf80h9sromt25bnwaykz11nrhq1y5l&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
-  "https://media0.giphy.com/media/VIKa3CjZDCoymNcBY5/giphy.gif?cid=6c09b9520kp1swgxoseiml8vx3476lxmplysstu0ki8zy8ke&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
+  "https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif",
+  "https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif",
   "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
   "https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif",
   "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif"
