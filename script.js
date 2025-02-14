@@ -17,7 +17,6 @@ function moveButton() {
 yesBtn.addEventListener("click", function() {
     const messages = [
         "You made the right choice. No take-backs!",
-
         "Whew, that was a close one. Thought I’d have to bribe you with chocolate.",
         "Sweet! Now we just need a rom-com level montage.",
         "Guess we’re stuck together now. Hope you like bad jokes!",
@@ -29,7 +28,7 @@ yesBtn.addEventListener("click", function() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
     messageArea.innerHTML = `
-        <p>${randomMessage}</p>
+        <p>${messages}</p>
         <img src="https://media.giphy.com/media/3ohs4jLC0duUuWWA6w/giphy.gif" alt="Happy Love" style="width:100%; max-width:300px; border-radius:15px; margin-top:15px;">
     `;
 });
