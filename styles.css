@@ -1,6 +1,6 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #fce4ec;
     margin: 0;
     padding: 0;
@@ -22,10 +22,13 @@ body {
     max-width: 600px;
 }
 
-/* Header style */
+/* Header style with colorful gradient text */
 h1 {
+    font-family: 'Bangers', cursive;
     font-size: 2rem;
-    color: #e91e63;
+    background: linear-gradient(to right, #ff4b5c, #ff66b2, #ff99cc, #ffb3e6);
+    -webkit-background-clip: text;
+    color: transparent;
     margin-bottom: 20px;
 }
 
@@ -76,5 +79,3 @@ button#noBtn {
         font-size: 18px;
     }
 }
-
-
