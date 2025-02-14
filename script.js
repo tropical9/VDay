@@ -17,10 +17,8 @@ function moveButton() {
 yesBtn.addEventListener("click", function() {
     const messages = [
         "You made the right choice. No take-backs!",
-        "Finally! I was about to start begging.",
         "Whew, that was a close one. Thought I’d have to bribe you with chocolate.",
         "You’ve officially upgraded your Valentine’s Day to ‘awesome.’",
-        "Best decision you’ve made today. Probably.",
         "Sweet! Now we just need a rom-com level montage.",
         "Guess we’re stuck together now. Hope you like bad jokes!",
         "You’re locked in now—no escaping this Valentine’s Day!",
@@ -31,7 +29,7 @@ yesBtn.addEventListener("click", function() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
     // Working GIF URL from Giphy
-    const gifURL = "https://media.giphy.com/media/l0HlyLQsbvnYz7QNa/giphy.gif"; 
+    const gifURL = "https://media.giphy.com/media/26FPqKps6dZF9LBIc/giphy.gif?cid=790b7611t4kqxuo7xgkozl8qyikbjazc98p1xhl7kzw56gy9&ep=v1_gifs_search&rid=giphy.gif&ct=g"; 
 
     messageArea.innerHTML = `
         <p>${randomMessage}</p>
