@@ -17,7 +17,9 @@ function moveButton() {
 yesBtn.addEventListener("click", function() {
     const messages = [
         "You made the right choice. No take-backs!",
+
         "Whew, that was a close one. Thought I’d have to bribe you with chocolate.",
+        "Sweet! Now we just need a rom-com level montage.",
         "Guess we’re stuck together now. Hope you like bad jokes!",
         "You’re locked in now—no escaping this Valentine’s Day!",
         "Good call. Imagine the regret if you had said no.",
