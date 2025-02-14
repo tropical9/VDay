@@ -33,6 +33,7 @@ h1 {
   justify-content: center;
   gap: 20px;
   margin-bottom: 20px;
+  position: relative; /* Ensure buttons are positioned relative to this container */
 }
 
 button {
