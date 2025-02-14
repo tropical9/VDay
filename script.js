@@ -15,8 +15,20 @@ const shareButton = document.getElementById("share-btn");
 
 // Make the "No" button move away when hovered or clicked
 noButton.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-  const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+  const yesButtonRect = yesButton.getBoundingClientRect();
+  const buffer = 20; // Minimum distance between buttons
+
+  let x, y;
+  do {
+    x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+    y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+  } while (
+    x + noButton.offsetWidth > yesButtonRect.left - buffer &&
+    x < yesButtonRect.right + buffer &&
+    y + noButton.offsetHeight > yesButtonRect.top - buffer &&
+    y < yesButtonRect.bottom + buffer
+  );
+
   noButton.style.position = "absolute";
   noButton.style.left = `${x}px`;
   noButton.style.top = `${y}px`;
@@ -26,7 +38,7 @@ noButton.addEventListener("mouseover", () => {
 yesButton.addEventListener("click", () => {
   const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
   gifContainer.innerHTML = `
-    <p>Yay! You made my day! 💖</p>
+    <p>Yay, Happy Valentine's Day! 💖</p>
     <img src="${randomGif}" alt="Cute GIF">
   `;
   confetti({
