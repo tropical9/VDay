@@ -12,24 +12,22 @@ body {
 }
 
 /* Heart Background Animation */
-body::before {
+body::before, body::after {
     content: "❤️";
     font-size: 100px;
-    opacity: 0.1;
+    opacity: 0.2;
     position: absolute;
-    top: 10%;
-    left: 10%;
     animation: float 5s infinite alternate;
 }
 
+body::before {
+    top: 10%;
+    left: 10%;
+}
+
 body::after {
-    content: "💖";
-    font-size: 100px;
-    opacity: 0.1;
-    position: absolute;
     bottom: 10%;
     right: 10%;
-    animation: float 5s infinite alternate-reverse;
 }
 
 @keyframes float {
@@ -42,4 +40,56 @@ body::after {
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(255, 0, 
+    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    animation: pop 0.5s ease-in-out;
+}
+
+/* Pop-in animation */
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Heading */
+h1 {
+    font-size: 24px;
+    color: #ff3366;
+}
+
+/* Button Styling */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    font-size: 20px;
+    padding: 12px 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+#yesBtn {
+    background-color: #ff3366;
+    color: white;
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.3);
+}
+
+#yesBtn:hover {
+    background-color: #ff1a4d;
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background-color: white;
+    color: #ff3366;
+    border: 2px solid #ff3366;
+    position: absolute;
+}
