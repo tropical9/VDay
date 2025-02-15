@@ -1,8 +1,9 @@
 /* General Styles */
 body {
-  font-family: 'Indie Flower', cursive;
-  background-color: #ffebee;
-  color: #c62828;
+  font-family: 'Barriecito', cursive;
+  background-color: #ffebee; /* Soft pink background */
+  background-image: url('https://www.transparenttextures.com/patterns/always-grey.png'); /* Subtle texture */
+  color: #c62828; /* Romantic red text */
   text-align: center;
   margin: 0;
   padding: 0;
@@ -11,54 +12,139 @@ body {
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
+  overflow: hidden; /* Hide overflow for falling hearts */
 }
 
+/* Container for the content */
 .container {
-  background-color: #ffffff;
+  background-color: #ffffff; /* White background */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
   max-width: 90%;
   width: 400px;
+  position: relative;
+  z-index: 1; /* Ensure content is above falling hearts */
 }
 
+/* Heading */
 h1 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Barriecito', cursive;
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #ff6f61; /* Coral pink */
 }
 
+/* Joke Text */
 #joke {
-  font-family: 'Chewy', cursive;
+  font-family: 'Barriecito', cursive;
   font-size: 1.5rem;
   margin: 20px 0;
+  color: #c62828; /* Romantic red */
 }
 
+/* GIF Image */
 #gif {
   max-width: 100%;
   border-radius: 10px;
   margin-top: 20px;
+  display: none; /* Hidden by default */
 }
 
-button {
-  font-family: 'Indie Flower', cursive;
+/* Button */
+#unlock-button {
+  font-family: 'Barriecito', cursive;
   font-size: 1.2rem;
-  background-color: #ff6f61;
+  background-color: #ff6f61; /* Coral pink */
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-  background-color: #ff3b2f;
+#unlock-button:hover {
+  background-color: #ff3b2f; /* Brighter red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Footer */
 footer {
   margin-top: 20px;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Barriecito', cursive;
   font-size: 1rem;
-  color: #c62828;
+  color: #c62828; /* Romantic red */
+}
+
+/* Falling Hearts Animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+}
+
+.heart {
+  position: absolute;
+  top: -10%;
+  font-size: 1.5rem;
+  color: #ff6f61; /* Coral pink */
+  animation: fall 5s linear infinite;
+  z-index: 0; /* Behind the content */
+}
+
+/* Randomize heart positions */
+.heart:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+  left: 15%;
+  animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+  left: 25%;
+  animation-delay: 4s;
+}
+
+.heart:nth-child(4) {
+  left: 35%;
+  animation-delay: 1s;
+}
+
+.heart:nth-child(5) {
+  left: 45%;
+  animation-delay: 3s;
+}
+
+.heart:nth-child(6) {
+  left: 55%;
+  animation-delay: 0.5s;
+}
+
+.heart:nth-child(7) {
+  left: 65%;
+  animation-delay: 2.5s;
+}
+
+.heart:nth-child(8) {
+  left: 75%;
+  animation-delay: 1.5s;
+}
+
+.heart:nth-child(9) {
+  left: 85%;
+  animation-delay: 3.5s;
+}
+
+.heart:nth-child(10) {
+  left: 95%;
+  animation-delay: 0.8s;
 }
