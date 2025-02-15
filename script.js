@@ -38,6 +38,9 @@ const moveNoButton = () => {
   noButton.style.top = `${y}px`;
 };
 
+// Move the "No" button to a safe position when the page loads
+moveNoButton();
+
 // Move the "No" button when hovered or clicked
 noButton.addEventListener("mouseover", moveNoButton);
 noButton.addEventListener("click", moveNoButton);
