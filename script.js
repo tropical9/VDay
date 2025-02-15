@@ -27,11 +27,7 @@ const gifs = [
   "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif", // Bank loan
   "https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif", // Camera
   "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif", // Time traveler
-  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif", // Star
-  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif", // Keyboard
-  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif", // Rainbow
-  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif", // Cat
-  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif"  // Blanket
+  
 ];
 
 const jokeElement = document.getElementById("joke");
