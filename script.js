@@ -12,27 +12,29 @@ const yesButton = document.getElementById("yes-btn");
 const noButton = document.getElementById("no-btn");
 const gifContainer = document.getElementById("gif-container");
 const shareButton = document.getElementById("share-btn");
+const container = document.querySelector(".container");
 
-// Function to move the "No" button to a safe position
+// Function to move the "No" button to a safe position within the container
 const moveNoButton = () => {
   const yesButtonRect = yesButton.getBoundingClientRect();
   const noButtonRect = noButton.getBoundingClientRect();
+  const containerRect = container.getBoundingClientRect();
   const buffer = 20; // Minimum distance between buttons
 
   let x, y;
   do {
-    // Calculate random position within the window
-    x = Math.random() * (window.innerWidth - noButtonRect.width);
-    y = Math.random() * (window.innerHeight - noButtonRect.height);
+    // Calculate random position within the container
+    x = Math.random() * (containerRect.width - noButtonRect.width);
+    y = Math.random() * (containerRect.height - noButtonRect.height);
   } while (
     // Ensure the "No" button doesn't overlap the "Yes" button
-    x + noButtonRect.width > yesButtonRect.left - buffer &&
-    x < yesButtonRect.right + buffer &&
-    y + noButtonRect.height > yesButtonRect.top - buffer &&
-    y < yesButtonRect.bottom + buffer
+    x + noButtonRect.width > yesButtonRect.left - containerRect.left - buffer &&
+    x < yesButtonRect.right - containerRect.left + buffer &&
+    y + noButtonRect.height > yesButtonRect.top - containerRect.top - buffer &&
+    y < yesButtonRect.bottom - containerRect.top + buffer
   );
 
-  // Set the new position
+  // Set the new position relative to the container
   noButton.style.position = "absolute";
   noButton.style.left = `${x}px`;
   noButton.style.top = `${y}px`;
@@ -45,7 +47,7 @@ moveNoButton();
 noButton.addEventListener("mouseover", moveNoButton);
 noButton.addEventListener("click", moveNoButton);
 
-// Show random GIF and confetti when "Yes" is clicked
+// Show random GIF, confetti, and hide the "No" button when "Yes" is clicked
 yesButton.addEventListener("click", () => {
   const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
   gifContainer.innerHTML = `
@@ -57,13 +59,9 @@ yesButton.addEventListener("click", () => {
     spread: 70,
     origin: { y: 0.6 }
   });
-});
 
-// Remove the loaded GIF when "No" is clicked after "Yes"
-noButton.addEventListener("click", () => {
-  if (gifContainer.innerHTML) {
-    gifContainer.innerHTML = ""; // Clear the GIF container
-  }
+  // Hide the "No" button
+  noButton.style.display = "none";
 });
 
 // Share button functionality
