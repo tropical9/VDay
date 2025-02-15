@@ -1,64 +1,54 @@
-/* General Styles */
-body {
-  font-family: 'Indie Flower', cursive;
-  background-color: #ffebee;
-  color: #c62828;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
+const jokes = [
+  "Are you a magician? Because every time I look at you, everyone else disappears.",
+  "Are you a campfire? Because you’re hot and I can’t resist getting closer.",
+  "Are you a bank loan? Because you’ve got my interest.",
+  "Are you a camera? Every time I look at you, I smile.",
+  "Are you a time traveler? Because I see you in my future.",
+  "Are you a star? Because you light up my whole world.",
+  "Are you a keyboard? Because you’re just my type.",
+  "Are you a rainbow? Because you make everything brighter.",
+  "Are you a cat? Because you’ve got me feline all kinds of love.",
+  "Are you a blanket? Because you’re so warm and comforting.",
+  "Are you a compass? Because without you, I’m lost.",
+  "Are you a cupcake? Because you’re sweet and irresistible.",
+  "Are you a wifi signal? Because I’m really feeling a connection.",
+  "Are you a dream? Because you’re too good to be true.",
+  "Are you a snowflake? Because you’re one of a kind.",
+  "Are you a library book? Because I can’t stop checking you out.",
+  "Are you a candle? Because you make everything feel warm and cozy.",
+  "Are you a puzzle? Because I can’t figure out how someone so perfect exists.",
+  "Are you a sunset? Because you take my breath away every time I see you.",
+  "Are you a coffee? Because you’re brewing up all the right feelings."
+];
+
+const gifs = [
+  "https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif", // Magician
+  "https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif", // Campfire
+  "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif", // Bank loan
+  "https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif", // Camera
+  "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif", // Time traveler
+  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif", // Star
+  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif", // Keyboard
+  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif", // Rainbow
+  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif", // Cat
+  "https://media.giphy.com/media/3o7TKsQ8UQ3bqh3zI4/giphy.gif"  // Blanket
+];
+
+const jokeElement = document.getElementById("joke");
+const gifElement = document.getElementById("gif");
+const unlockButton = document.getElementById("unlock-button");
+
+function generateRandomJoke() {
+  const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+  const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+
+  jokeElement.textContent = randomJoke;
+  gifElement.src = randomGif;
+  gifElement.style.display = "block";
 }
 
-.container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 90%;
-  width: 400px;
-}
+// Initial load (optional)
+generateRandomJoke();
 
-h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-#joke {
-  font-family: 'Chewy', cursive;
-  font-size: 1.5rem;
-  margin: 20px 0;
-}
-
-#gif {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-button {
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.2rem;
-  background-color: #ff6f61;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #ff3b2f;
-}
-
-footer {
-  margin-top: 20px;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1rem;
-  color: #c62828;
-}
+// Reload joke and GIF on button click
+unlockButton.addEventListener("click", generateRandomJoke);
