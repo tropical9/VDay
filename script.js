@@ -35,6 +35,10 @@ const gifs = [
 "https://media2.giphy.com/media/Lopx9eUi34rbq/giphy.gif?cid=6c09b952sv5xnuewoky84vuubsiu6pbzhr4vtprv6i8a0igb&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
 
 "https://media0.giphy.com/media/26xBPncFx3h3MQd8s/giphy.gif?cid=6c09b9529yv6leppn1pvnl6r9vd5ulbdqw1oy07hoa9df5gz&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
+"https://media3.giphy.com/media/26BGQb3tjtMeB1iMg/giphy.gif?cid=6c09b952p1pa2j32os1q508e74pn74xvjnx1yvois1tf0svi&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
+"https://media0.giphy.com/media/VIKa3CjZDCoymNcBY5/giphy.gif?cid=6c09b952w08178k2xooxziwwtbd6rq19421neasowhzupxpk&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
+"https://media1.giphy.com/media/pUvUtlg4Hdj2IH1uOa/giphy.gif?cid=6c09b952nxj0tiv0bnmvd7rn40bne8ygjb0dqwuv4fyu3bb8&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
+
 ];
 
 const jokeElement = document.getElementById("joke");
