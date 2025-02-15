@@ -21,17 +21,23 @@ const moveNoButton = () => {
   const containerRect = container.getBoundingClientRect();
   const buffer = 20; // Minimum distance between buttons
 
+  // Calculate the boundaries of the container
+  const containerLeft = containerRect.left;
+  const containerTop = containerRect.top;
+  const containerWidth = containerRect.width;
+  const containerHeight = containerRect.height;
+
   let x, y;
   do {
     // Calculate random position within the container
-    x = Math.random() * (containerRect.width - noButtonRect.width);
-    y = Math.random() * (containerRect.height - noButtonRect.height);
+    x = Math.random() * (containerWidth - noButtonRect.width);
+    y = Math.random() * (containerHeight - noButtonRect.height);
   } while (
     // Ensure the "No" button doesn't overlap the "Yes" button
-    x + noButtonRect.width > yesButtonRect.left - containerRect.left - buffer &&
-    x < yesButtonRect.right - containerRect.left + buffer &&
-    y + noButtonRect.height > yesButtonRect.top - containerRect.top - buffer &&
-    y < yesButtonRect.bottom - containerRect.top + buffer
+    x + noButtonRect.width > yesButtonRect.left - containerLeft - buffer &&
+    x < yesButtonRect.right - containerLeft + buffer &&
+    y + noButtonRect.height > yesButtonRect.top - containerTop - buffer &&
+    y < yesButtonRect.bottom - containerTop + buffer
   );
 
   // Set the new position relative to the container
