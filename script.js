@@ -18,7 +18,20 @@ const jokes = [
   "Are you a candle? Because you make everything feel warm and cozy.",
   "Are you a puzzle? Because I can’t figure out how someone so perfect exists.",
   "Are you a sunset? Because you take my breath away every time I see you.",
-  "Are you a coffee? Because you’re brewing up all the right feelings."
+  "Are you a coffee? Because you’re brewing up all the right feelings.",
+  "Are you a parking ticket? Because you’ve got *fine* written all over you.",
+  "Are you a banana? Because I find you a-peeling.",
+  "Are you a time traveler? Because I see you in my future… and my past… and my present… basically everywhere.",
+  "Are you a haunted house? Because you’re giving me goosebumps.",
+  "Are you a broom? Because you’ve swept me off my feet.",
+  "Are you a dictionary? Because you’re adding meaning to my life.",
+  "Are you a cactus? Because you’re sharp, and I can’t stay away.",
+  "Are you a Netflix subscription? Because I can’t quit you.",
+  "Are you a microwave? Because you make my heart race.",
+  "Are you a light switch? Because you turn me on.",
+  "Are you a pirate? Because you’ve stolen my heart (and maybe my treasure).",
+  "Are you a vacuum? Because you’re sucking me in.",
+  "Are you a potato? Because you’re a little spud-tacular."
 ];
 
 const gifs = [
