@@ -47,6 +47,7 @@ function generateRandomJoke() {
   gifElement.style.display = "block";
 }
 
+
 // Initial load (optional)
 generateRandomJoke();
 
