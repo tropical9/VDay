@@ -1,63 +1,71 @@
-const jokes = [
-  "Are you a Wi-Fi signal? Because I’m really feeling a connection.",
-  "Are you a camera? Because every time I look at you, I smile.",
-  "Are you a meme? Because you’re viral in my heart.",
-  "Are you a keyboard? Because you’re just my type.",
-  "Are you a TikTok trend? Because I can’t stop thinking about you.",
-  "Are you a pizza? Because you’re cheesy and I love it.",
-  "Are you a cat video? Because you make me laugh uncontrollably.",
-  "Are you a Netflix series? Because I could binge you all day.",
-  "Are you a meme template? Because you’re iconic.",
-  "Are you a loading screen? Because you’re worth the wait."
-];
-
-const gifs = [
-  "https://media3.giphy.com/media/8m4R4pvViWtRzbloJ1/giphy.gif", // New GIF
-  "https://media1.giphy.com/media/l4Jz3a8jO92crUlWM/giphy.gif", // New GIF
-  "https://media0.giphy.com/media/fXJyMfUdqVCMPAnPJM/giphy.gif", // New GIF
-  "https://media1.giphy.com/media/Z5xk7fGO5FjjTElnpT/giphy.gif", // New GIF
-  "https://media0.giphy.com/media/8g63zqQ5RPt60/giphy.gif", // New GIF
-  "https://media2.giphy.com/media/Lopx9eUi34rbq/giphy.gif", // New GIF
-  "https://media0.giphy.com/media/26xBPncFx3h3MQd8s/giphy.gif", // New GIF
-  "https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif", // Old GIF
-  "https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif", // Old GIF
-  "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif" // Old GIF
-];
-
-const jokeElement = document.getElementById("joke");
-const gifElement = document.getElementById("gif");
-const unlockButton = document.getElementById("unlock-button");
-
-let usedJokes = [];
-let usedGifs = [];
-
-function getRandomItem(arr, usedItems) {
-  if (usedItems.length === arr.length) {
-    usedItems = []; // Reset if all items have been used
-  }
-  let randomItem;
-  do {
-    randomItem = arr[Math.floor(Math.random() * arr.length)];
-  } while (usedItems.includes(randomItem));
-  usedItems.push(randomItem);
-  return randomItem;
+/* General Styles */
+body {
+  font-family: 'Barriecito', cursive;
+  background-color: #ffebee;
+  color: #c62828;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-function generateRandomJoke() {
-  const randomJoke = getRandomItem(jokes, usedJokes);
-  const randomGif = getRandomItem(gifs, usedGifs);
-
-  jokeElement.textContent = randomJoke;
-  gifElement.src = randomGif;
-  gifElement.style.display = "block";
+/* Container for the content */
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  width: 400px;
 }
 
-// Show initial message
-let firstClick = true;
-unlockButton.addEventListener("click", () => {
-  if (firstClick) {
-    jokeElement.textContent = "";
-    firstClick = false;
-  }
-  generateRandomJoke();
-});
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff6f61;
+}
+
+/* Joke Text */
+#joke {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  min-height: 60px; /* Ensure consistent spacing */
+}
+
+/* GIF Image */
+#gif {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Button */
+#unlock-button {
+  font-size: 1.2rem;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+#unlock-button:hover {
+  background-color: #ff3b2f;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  font-size: 1rem;
+}
